@@ -1,1 +1,1 @@
-uvicorn main:api
+gunicorn main:api
