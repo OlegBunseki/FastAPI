@@ -18,16 +18,17 @@ The primary or most-commonly-used HTTP verbs (or methods, as they are properly c
 5. DELETE 
 
 
-# JSON Schemas
+# JSON Schemas / working with json
 - https://json-schema.org/
+- https://realpython.com/python-json/
 
 
 # Python Types
 - Intro: https://fastapi.tiangolo.com/python-types/
 - Docs: https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
-# GET vs. POST
-- GET vs. POST – die beiden wichtigsten HTTP-Requests im Vergleich
+# GET vs. POST (die beiden wichtigsten HTTP-Requests im Vergleich)
+- https://www.ionos.de/digitalguide/websites/web-entwicklung/get-vs-post/
 - https://www.w3schools.com/tags/ref_httpmethods.asp
 
 
@@ -38,3 +39,14 @@ The primary or most-commonly-used HTTP verbs (or methods, as they are properly c
 # enum
 - https://www.tutorialspoint.com/enum-in-python
 - https://florian-dahlitz.de/blog/why-you-should-use-more-enums-in-python
+
+
+
+# Deploy to Azure App Service
+1. Create App Service
+2. Go to Deployment Center: Connect to GitHub Account and select branch from where to deploy
+3. Got To Configuration: General Settings: Select Startup Command
+
+For FastAPI:
+- add uvicorn to requirements.txt
+- start.sh = python -m uvicorn main:api --host 0.0.0.0 
