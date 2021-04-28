@@ -81,10 +81,10 @@ def do_i_need_umbrella(location: Location = fastapi.Depends()):
 @router.get('/api/umbrella_v3.3', response_model=UmbrellaStatus)
 def do_i_need_umbrella(location: Location = fastapi.Depends()):
 
-    url = f"https://weather.talkpython.fm/api/weather?city={location.city}"
+    url = f"https://weather.talkpython.fm/api/weather?city={location.city}&country={location.country}"
 
     response = requests.get(url)
-
+    
     if response.status_code == 200:
         data = response.json()
 

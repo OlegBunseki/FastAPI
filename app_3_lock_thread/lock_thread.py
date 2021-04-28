@@ -68,8 +68,4 @@ def run_code(a: int, b: int, i: int):
         return {'result': a + b}
 
 
-
-
-
-
 uvicorn.run(api, host='127.0.0.1', port=8000)

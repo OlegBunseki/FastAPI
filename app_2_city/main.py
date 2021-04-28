@@ -7,9 +7,7 @@ from typing import Optional
 from pydantic import BaseModel
 
 
-# Run Instruction: uvicorn cities:app --reload
-
-app = FastAPI()
+api = FastAPI()
 
 db = []
 
@@ -19,12 +17,12 @@ class City(BaseModel):
     country: str
 
 
-@app.get('/')
+@api.get('/')
 def index():
     return {'key': 'value'}
 
 
-@app.get('/cities', response=City)
+@api.get('/cities', response_model=City)
 def get_cities():
 
     output = []
@@ -33,6 +31,7 @@ def get_cities():
         print(city)
         r = requests.get('http://worldtimeapi.org/api/timezone/{}'.format(city["timezone"]))
         if r.status_code == 200:
+
             result = {}
             current_time = r.json()['datetime']
             
@@ -45,23 +44,24 @@ def get_cities():
     return output
 
 
-@app.get('/cities/{city_id}')
+@api.get('/cities/{city_id}')
 def get_city(city_id: int):
     return db[city_id-1]
 
 
-@app.post('/cities')
+@api.post('/cities')
 def create_city(city: City):
     db.append(city.dict())
     print(db)
     return db[-1]
 
 
-@app.delete('/cities/{city_id}')
+@api.delete('/cities/{city_id}')
 def delete_city(city_id: int):
     db.pop(city_id-1)
     return {}
 
 
 
-uvicorn.run(app, host='127.0.0.1', port=8000)
+if __name__ == '__main__':
+    uvicorn.run(api, host='127.0.0.1', port=8000)
