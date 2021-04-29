@@ -1,3 +1,5 @@
+[![Build and deploy Python app to Azure Web App - ServiceV1](https://github.com/OlegBunseki/FastAPI/actions/workflows/main_ServiceV1.yml/badge.svg)](https://github.com/OlegBunseki/FastAPI/actions/workflows/main_ServiceV1.yml)
+
 # Helpful Links:
 - pydantic: https://pydantic-docs.helpmanual.io/
 - fastapi: https://fastapi.tiangolo.com/
