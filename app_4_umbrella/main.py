@@ -4,6 +4,9 @@ import uvicorn
 from views import home
 from api import weather_api
 
+import os
+
+os.chdir(os.getcwd())
 
 api = fastapi.FastAPI()
 
