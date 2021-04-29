@@ -4,7 +4,10 @@ EXPOSE 80
 ARG app=app_1_calculator
 
 RUN echo $app
+
 COPY /$app /app
+COPY requirements.txt /app/requirements.txt
+
 RUN pip install -r requirements.txt
 CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "80"]
 
