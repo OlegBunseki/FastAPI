@@ -30,6 +30,7 @@ def do_i_need_umbrella(city: str, country: str='us', state: Optional[str]=None):
 def do_i_need_umbrella(location: Location):
     return location
 
+# Error: TypeError: Failed to execute 'fetch' on 'Window': Request with GET/HEAD method cannot have body.
 # The request comes in the BODY!
 # Therefore it needs a POST and not a GET request
 
