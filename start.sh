@@ -1,1 +1,1 @@
-python -m uvicorn app_4_umbrella.main:api --host 0.0.0.0
+python -m uvicorn app_1_calculator.main:api --host 0.0.0.0
