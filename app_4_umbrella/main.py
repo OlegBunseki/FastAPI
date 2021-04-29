@@ -6,7 +6,7 @@ from api import weather_api
 
 import os
 
-os.chdir(os.getcwd())
+# os.chdir(os.getcwd())
 
 api = fastapi.FastAPI()
 

@@ -1,5 +1,7 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
+
 # PWD: /app
+
 EXPOSE 80
 ARG app=app_1_calculator
 
