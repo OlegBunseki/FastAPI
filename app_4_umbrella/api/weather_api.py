@@ -162,13 +162,6 @@ def do_i_need_umbrella(loc: LocationOptional = fastapi.Depends()):
     return output
 
 
-@router.post('/api/umbrella_v6.4')
-def do_i_need_umbrella(loc: LocationOptional):
-    
-    output = LocationOptional(city='berlin', country='germany')
-    
-    return output
-
 #####################################################################
 ### HTTPException
 #####################################################################
